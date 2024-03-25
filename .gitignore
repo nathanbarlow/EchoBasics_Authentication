@@ -1,0 +1,70 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Go
+bin/
+pkg/
+*.o
+*.a
+*.so
+*.dylib
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+# Go vendor directory
+vendor/
+
+# Executable files
+*.exe
+*.exe~
+*.dll
+*.bat
+*.com
+*.out
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+# Logs
+*.log
+
+# Node modules and logs
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Private keys and certificates
+*.pem
+*.key
+*.crt
+*.csr
+certificate/*
+
+# Environment Variables
+.env
+
+# IDE specific files
+.idea/
+*.iml
+.vscode/
+*.sublime-workspace
+
+# Build folder
+/dist
+
+# Static files that are served by HTTP server, such as images in public folder (uncomment if not needed)
+# /public/img/
+
+# Ignore SASS config files
+.sass-cache

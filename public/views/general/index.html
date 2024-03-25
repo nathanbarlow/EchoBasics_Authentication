@@ -1,0 +1,20 @@
+<!-- A main landing page using bootstrap -->
+<!-- Large area at top with a button and a header that says "Authentication Test" -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authentication Test</title>
+    {{ template "js" . }} <!-- This is the template for the JavaScript files. -->
+  </head>
+  <body>
+    {{ template "navbar" . }}
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Authentication Test</h1>
+        <p>Click the button below to authenticate</p>
+        <a href="/login" class="btn btn-primary">Sign in</a>
+      </div>
+    </div>
+  </body>
+</html>

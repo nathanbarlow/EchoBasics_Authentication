@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodworking Planes</title>
+    <!-- Bootstrap CSS and JS -->
+    {{ template "js" . }} <!-- This is the template for the JavaScript and CSS files. -->
+</head>
+<body>
+    <!-- Navbar -->
+    {{ template "navbar" . }}
+
+    <!-- Header -->
+    <header class="bg-dark text-white p-4 text-center">
+        <h1>Woodworking Planes</h1>
+        <p>Explore the world of woodworking planes</p>
+    </header>
+
+    <!-- Overview Section -->
+    <section class="p-5">
+        <div class="container">
+            <h2>Overview</h2>
+            <p>Woodworking planes are tools used for shaping wood. They are used to flatten, reduce the thickness of, and impart a smooth surface to a rough piece of lumber. As an indispensable part of the woodworker's tool chest, planes are used for various tasks including smoothing, shaping, and leveling wood surfaces.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="p-5 bg-light">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/juuma-hobel-300036-1.jpg" class="card-img-top" alt="Plane Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Plane Type 1</h5>
+                            <p class="card-text">A brief description of the plane type.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for more planes -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>Copyright &copy; 2024 Woodworking Planes</p>
+    </footer>
+</body>
+</html>
