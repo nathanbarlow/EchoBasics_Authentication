@@ -8,17 +8,28 @@ import (
 
 func index(c echo.Context) error {
 	data := BuildDataMapFromContext(c)
+	data["title"] = "Home"
+
+	// return c.Render(http.StatusOK, "index.html", data)
 	return c.Render(http.StatusOK, "index.html", data)
 }
 
 func notFound(c echo.Context) error {
 	data := BuildDataMapFromContext(c)
+	data["title"] = "Page Not Found"
 	return c.Render(http.StatusNotFound, "404.html", data)
 }
 
 func login(c echo.Context) error {
 	data := BuildDataMapFromContext(c)
+	data["title"] = "Login"
 	return c.Render(http.StatusOK, "login.html", data)
+}
+
+func planes(c echo.Context) error {
+	data := BuildDataMapFromContext(c)
+	data["title"] = "Planes"
+	return c.Render(http.StatusOK, "planes.html", data)
 }
 
 func loginAuth(c echo.Context) error {
@@ -37,11 +48,6 @@ func loginAuth(c echo.Context) error {
 
 	data := BuildDataMapFromContext(c)
 	return c.Render(http.StatusOK, "login.html", data)
-}
-
-func planes(c echo.Context) error {
-	data := BuildDataMapFromContext(c)
-	return c.Render(http.StatusOK, "planes.html", data)
 }
 
 func logout(c echo.Context) error {

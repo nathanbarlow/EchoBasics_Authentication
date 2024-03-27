@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }}</title>
+    <title>{{ .title }}</title>
     <!-- Bootstrap CSS and JS -->
     {{ template "js" . }} <!-- This is the template for the JavaScript and CSS files. -->
 </head>
@@ -11,13 +11,3 @@
 <body>
     <!-- Navbar -->
     {{ template "navbar" . }}
-
-    <!-- Template Body -->
-    {{ template "content" . }}
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3">
-        <p>Copyright &copy; 2024 Woodworking Planes</p>
-    </footer>
-</body>
-</html>

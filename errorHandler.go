@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
+	"runtime"
 
 	"github.com/labstack/echo/v4"
 )
@@ -17,6 +19,9 @@ func loadErrorHandler(e *echo.Echo) {
 					} else if he.Code == http.StatusUnauthorized {
 						return c.Redirect(http.StatusFound, "/login")
 					}
+				} else {
+					_, file, line, _ := runtime.Caller(1)
+					return c.String(http.StatusInternalServerError, fmt.Sprintf("An error occurred: %v\nFile: %s\nLine: %d", err, file, line))
 				}
 				return err
 			}

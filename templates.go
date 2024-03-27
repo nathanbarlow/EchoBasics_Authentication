@@ -7,8 +7,12 @@ import (
 )
 
 func loadTemplates(e *echo.Echo) {
-	t := &Template{
-		templates: template.Must(template.ParseGlob("public/views/*/*.html")),
+	// Initialize the template renderer
+	templates := template.Must(template.ParseGlob("public/views/*/*.html"))
+
+	renderer := &TemplateRenderer{
+		templates: templates,
 	}
-	e.Renderer = t
+	e.Renderer = renderer
+
 }
