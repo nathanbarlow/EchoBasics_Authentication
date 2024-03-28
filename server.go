@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/gorilla/sessions"
 	"github.com/labstack/echo/v4"
@@ -15,8 +16,10 @@ var (
 )
 
 func main() {
+	// Set the environment variable to development
+	os.Setenv("ENV", "development")
+
 	fmt.Println("https://localhost:5050")
-	// fmt.Println("http://localhost:5000")
 
 	e := echo.New()
 
@@ -24,12 +27,10 @@ func main() {
 	sessionConfig()
 
 	// Load the templates, middleware, error handler and routes
+	loadErrorHandler(e)
 	loadTemplates(e)
 	loadMiddleware(e)
-	loadErrorHandler(e)
 	loadRoutes(e)
-
-	// go e.Logger.Fatal(e.Start(":5000"))
 
 	e.Logger.Fatal(e.StartTLS(
 		":5050",

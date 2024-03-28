@@ -5,6 +5,7 @@ import "github.com/labstack/echo/v4"
 func loadRoutes(e *echo.Echo) {
 	e.GET("/", index)
 	e.GET("/404", notFound)
+	e.GET("/500", serverError)
 	e.GET("/login", login)
 	e.POST("/login", loginAuth)
 	e.GET("/logout", logout)

@@ -20,6 +20,12 @@ func notFound(c echo.Context) error {
 	return c.Render(http.StatusNotFound, "404.html", data)
 }
 
+func serverError(c echo.Context) error {
+	data := BuildDataMapFromContext(c)
+	data["title"] = "Server Error"
+	return c.Render(http.StatusNotFound, "500.html", data)
+}
+
 func login(c echo.Context) error {
 	data := BuildDataMapFromContext(c)
 	data["title"] = "Login"

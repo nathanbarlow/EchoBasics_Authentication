@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo-contrib/session"
 	"github.com/labstack/echo/v4"
@@ -9,21 +10,23 @@ import (
 )
 
 func loadMiddleware(e *echo.Echo) {
+	if os.Getenv("ENV") == "development" {
+		e.Debug = true
+	}
+
 	e.Static("/", "/public/static")
 
 	e.Use(middleware.Secure())
 	e.Use(middleware.BodyLimit("2M"))
 	e.Use(middleware.RateLimiter(middleware.NewRateLimiterMemoryStore(20)))
-	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+	e.Use(middleware.Logger())
 
 	e.Use(session.MiddlewareWithConfig(session.Config{
 		Store: store,
 	}))
 
 	e.Use(sessionToContextMiddleware)
-
-	// TODO: Add custome error handler here.
 }
 
 // Middleware to check if the user is authenticated
